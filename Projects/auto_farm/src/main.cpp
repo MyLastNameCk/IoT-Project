@@ -1,11 +1,15 @@
 #include <Arduino.h>
 
 #define buzzer_pin 18
+#define sensor_soil 2
+#define sensor_water 32
+#define led_merah 21
+#define led_hijau 19
 
-const int sensor_soil = 2;
-const int sensor_water = 32;
-const int led_merah = 21;
-const int led_hijau = 19;
+//const int sensor_soil = 2;
+//const int sensor_water = 32;
+//const int led_merah = 21;
+//const int led_hijau = 19;
 
 void setup() {
   Serial.begin(115200);
@@ -16,7 +20,7 @@ void setup() {
 
   digitalWrite(led_merah, LOW);
   digitalWrite(buzzer_pin, LOW);
-  digitalWrite(led_hijau, LOW);
+  digitalWrite(led_hijau, HIGH);
 } 
 
 void loop() {
@@ -32,11 +36,29 @@ void loop() {
 
   delay(1000);
 
-  if (nilaisensor_soil_moisure < 50 and nilaisensor_water > 300) {
+ // if (nilaisensor_soil_moisure < 50 and nilaisensor_water > 300) {
+ //   digitalWrite(led_merah, HIGH);
+ //   digitalWrite(buzzer_pin, HIGH);
+ //   Serial.println("Harus Disiram Bang");
+ // } else {
+ //   digitalWrite(led_hijau, HIGH);
+ // }
+
+  if () {
     digitalWrite(led_merah, HIGH);
     digitalWrite(buzzer_pin, HIGH);
-    Serial.println("Harus Disiram Bang");
+    digitalWrite(led_hijau, LOW)
+    Serial.println("Kandungan air pada tanah kering!")
+  } else if() {
+    digitalWrite(led_merah, LOW);
+    digitalWrite(buzzer_pin, LOW);
+    digitalWrite(led_hijau, HIGH)
+    Serial.println("Air sudah mecukupi kebutuhan tanaman")
   } else {
-    digitalWrite(led_hijau, HIGH);
+    digitalWrite(led_merah, LOW);
+    digitalWrite(buzzer_pin, LOW);
+    digitalWrite(led_hijau, LOW)
+    Serial.println("Kondisi tidak valid!")
   }
+
 }
