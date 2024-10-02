@@ -44,12 +44,12 @@ void loop() {
  //   digitalWrite(led_hijau, HIGH);
  // }
 
-  if () {
+  if (kelembapan <= 50 and nilaisensor_water <= 300) {
     digitalWrite(led_merah, HIGH);
     digitalWrite(buzzer_pin, HIGH);
     digitalWrite(led_hijau, LOW)
     Serial.println("Kandungan air pada tanah kering!")
-  } else if() {
+  } else if(nilaisensor_water >= 2000) {
     digitalWrite(led_merah, LOW);
     digitalWrite(buzzer_pin, LOW);
     digitalWrite(led_hijau, HIGH)
